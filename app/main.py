@@ -19,6 +19,8 @@ class CarWashStation:
             price = car.comfort_class * (self.clean_power - car.clean_mark) \
                 * self.average_rating / self.distance_from_city_center
             return round(price, 1)
+        else:
+            print("Incorrect distance_from_city_center value")
 
     def serve_cars(self, cars: list) -> float:
         total = 0
@@ -39,4 +41,4 @@ class CarWashStation:
                               + new_rate) / (self.count_of_ratings + 1)
         self.average_rating = round(new_average_rating, 1)
         self.count_of_ratings += 1
-        return self.average_rating, self.count_of_ratings
+        return self.average_rating
